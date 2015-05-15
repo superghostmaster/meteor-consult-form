@@ -1,0 +1,28 @@
+<body>
+<div class="jumbotron" id="main-jumbo">
+
+	<div class="container" ng-controller="PartiesListCtrl">
+		
+		<form class="form-group">
+			<label>Name</label>
+			<input ng-model="newParty.name" class="form-control" placeholder="Enter a Name">
+			
+			<label>Description</label>
+			<input ng-model="newParty.description" class="form-control" placeholder="Enter a Description">
+			
+			<button ng-click="parties.save(newParty); newParty=''; " class="btn btn-sm btn-success">Add Party</button>
+			<button class="btn btn-sm btn-danger" type="button" ng-click="removeAll()" id="remove-all-btn">Remove All</button>
+		</form>
+		
+		<ul class="list-unstyled">
+			<li class="well" ng-repeat="party in parties">
+      	<h3>{{party.name}}</h3>
+      	<p>{{party.description}}</p>
+      	<button class="btn btn-sm btn-warning" ng-click="remove(party)">X</button>
+    	</li>
+		</ul>
+
+	</div>
+
+</div>
+</body>
